@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>หน้าแรก</title>
+</head>
+<body>
+  <h1>กรอกข้อมูล</h1>
+  <form id="dataForm">
+    <label for="userData">ข้อมูลของคุณ:</label>
+    <input type="text" id="userData" required>
+    <button type="submit">ส่งข้อมูล</button>
+  </form>
+
+  <script>
+    document.getElementById('dataForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // ป้องกันการรีเฟรชหน้า
+      const userData = document.getElementById('userData').value;
+
+      // เก็บข้อมูลลง localStorage
+      localStorage.setItem('userInput', userData);
+
+      // เปลี่ยนไปยังหน้า display.html
+      window.location.href = 'display.html';
+    });
+  </script>
+</body>
+</html>
