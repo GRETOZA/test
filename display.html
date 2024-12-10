@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>แสดงข้อมูล</title>
+</head>
+<body>
+  <h1>ข้อมูลที่คุณกรอก</h1>
+  <p id="displayData"></p>
+  <a href="index.html">กลับไปหน้าแรก</a>
+
+  <script>
+    // ดึงข้อมูลจาก localStorage
+    const storedData = localStorage.getItem('userInput');
+    const displayElement = document.getElementById('displayData');
+
+    if (storedData) {
+      displayElement.textContent = storedData;
+    } else {
+      displayElement.textContent = 'ไม่มีข้อมูลที่จะแสดง';
+    }
+  </script>
+</body>
+</html>
